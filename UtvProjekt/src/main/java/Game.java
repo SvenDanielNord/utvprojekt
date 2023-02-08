@@ -6,11 +6,12 @@ public class Game {
     public void playGame(Scanner input) {
         System.out.println("Write alphabet");
         long startTime = System.currentTimeMillis();
+        input.nextLine();
         String answer = input.nextLine();
         long stopTime = System.currentTimeMillis();
         double usersTime = (stopTime - startTime) / 1000;
 
-        if (answer == alphabet) {
+        if (answer.equals(alphabet)) {
             System.out.println("Answer is right. Your time is: " + usersTime);
         }
         else {
