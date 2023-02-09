@@ -20,7 +20,6 @@ public class HighScore implements Comparable<HighScore> {
         this.playerName = playerName;
         this.time = time;
 
-
     }
 
     //Method who add a high score to List table and sorts the list after fastest time.
@@ -58,9 +57,9 @@ public class HighScore implements Comparable<HighScore> {
         System.out.println("|------------------------------------------------|");
     }
 
-    public int getNumberOfScores() throws toManyScoresException {
-        if (table.size() > 30){
-            throw new toManyScoresException();
+    public int getNumberOfScores() throws ToManyScoresException {
+        if (table.size() > 30) {
+            throw new ToManyScoresException();
         }
         return table.size();
     }
