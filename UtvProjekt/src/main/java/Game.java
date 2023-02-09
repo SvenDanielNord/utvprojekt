@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
 public class Game {
-    private String alphabet = "abcdefghijklmnopqrstuvwzyåäö";
-    private String engAlphabet = "abcdefghijkmnopqrstuvwxyz";
+    private String alphabet;
+
     private double usersTime;
 
-    public void playGame(Scanner input) {
+    public void playGame(Scanner input, int lang) {
+        getAlphabet(lang);
         System.out.println("Write alphabet");
         long startTime = System.currentTimeMillis();
         input.nextLine();
@@ -21,15 +22,15 @@ public class Game {
         }
     }
 
-    public void playGameEng(Scanner input) {
-        System.out.println("Write alphabet");
+    public void playGameEng(Scanner input, int lang) {
+
         long startTime = System.currentTimeMillis();
         input.nextLine();
         String answerEnglish = input.nextLine();
         long stopTime = System.currentTimeMillis();
         usersTime = (stopTime - startTime) / 1000;
 
-        if (answerEnglish.equals(engAlphabet)) {
+        if (answerEnglish.equals()) {
             System.out.println("Answer is right. Your time is: " + usersTime);
         }
         else {
@@ -37,6 +38,14 @@ public class Game {
         }
     }
 
+        public void getAlphabet(int lang) {
+            if(lang == 1) {
+                alphabet = "abcdefghijklmnopqrstuvwzyåäö";
+            }
+            else {
+                alphabet = "abcdefghijkmnopqrstuvwxyz";
+            }
+        }
     public double getUsersTime() {
         return usersTime;
     }
