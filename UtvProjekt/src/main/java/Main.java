@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Highscore highscore = new Highscore();
+        HighScore highScore = new HighScore();
         Game game = new Game();
         Scanner input = new Scanner(System.in);
         String playerName;
@@ -10,7 +10,7 @@ public class Main {
         int choice = 123;
 
         // create player
-        System.out.println("Write your name");
+        System.out.println("Write your name:");
         playerName = input.nextLine();
         System.out.println("Select language 1 for Swedish 2 English");
         lang = input.nextInt();
@@ -18,31 +18,32 @@ public class Main {
 
         System.out.println();
         do {
-
-            System.out.println("1. Play\n2. Highscore");
+            System.out.println("\n");
+            System.out.println("          MENU");
+            System.out.println("       1. Play\n       2. High score\n       0. Exit");
             switch (choice = input.nextInt()) {
 
                 case 1:
                     String isCorrect = game.playGame(input, lang);
                     if (isCorrect.equals("Corrext!")) {
-                        Highscore highS = new Highscore(playerName, game.getUsersTime());
-                        highscore.addScoreToTable(highS);
+                        HighScore highS = new HighScore(playerName, game.getUsersTime());
+                        highScore.addScoreToTable(highS);
                     }
                     //play game
                     break;
                 case 2:
-                    // see highscore
-                    highscore.printTable();
+                    // see highScore
+                    highScore.printTable();
                     break;
 
                 default:
-                    System.out.println("choose one or two");
+
                     break;
 
 
             }
         } while (choice != 0);
-
+        System.out.println("Thank you for playing!");
 
     }
 }
