@@ -5,7 +5,7 @@ public class Game {
 
     private double usersTime;
 
-    public void playGame(Scanner input, int lang) {
+    public String playGame(Scanner input, int lang) {
         getAlphabet(lang);
         System.out.println("Write alphabet");
         long startTime = System.currentTimeMillis();
@@ -16,9 +16,11 @@ public class Game {
 
         if (answer.equals(alphabet)) {
             System.out.println("Answer is right. Your time is: " + usersTime);
+            return "Corrext!";
         }
         else {
             System.out.println("Answer  isn't right. Your answer is: " + answer + " and your time is: " + usersTime + " s.");
+            return "Incorrect";
         }
     }
         public void getAlphabet(int lang) {

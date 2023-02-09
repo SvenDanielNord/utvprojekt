@@ -19,31 +19,29 @@ public class Main {
         System.out.println();
         do {
 
-        System.out.println("1. Play\n2. Highscore");
-        switch(choice = input.nextInt()){
+            System.out.println("1. Play\n2. Highscore");
+            switch (choice = input.nextInt()) {
 
-            case 1:
-                game.playGame(input, lang);
-                Highscore highS = new Highscore(playerName, game.getUsersTime());
-                highscore.addScoreToTable(highS);
-                //play game
-                break;
-            case 2:
-                // see highscore
-                highscore.printTable();
-                break;
+                case 1:
+                    String isCorrect = game.playGame(input, lang);
+                    if (isCorrect.equals("Correct")) {
+                        Highscore highS = new Highscore(playerName, game.getUsersTime());
+                        highscore.addScoreToTable(highS);
+                    }
+                    //play game
+                    break;
+                case 2:
+                    // see highscore
+                    highscore.printTable();
+                    break;
 
                 default:
                     System.out.println("choose one or two");
                     break;
 
 
-        }
-        }while (choice != 0);
-
-
-
-
+            }
+        } while (choice != 0);
 
 
     }
