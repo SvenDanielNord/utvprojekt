@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class toManyScoresException {
+public class ToManyScoresException extends Exception {
 }
