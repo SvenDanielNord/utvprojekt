@@ -5,28 +5,45 @@ import java.util.List;
 
 public class Highscore implements Comparable<Highscore>{
     private String playerName;
-    private int highscore;
+    private double highscore;
 
 
     private List <Highscore> table;
 
-    public Highscore(String playerName, int highscore) {
-        this.playerName = playerName;
-        this.highscore = highscore;
+    public Highscore() {
         table = new ArrayList<>();
     }
-    public void addScoreToTable(String nick, int score){
-        table.add(new Highscore(nick,score));
+
+    public Highscore(String playerName, double highscore) {
+        this.playerName = playerName;
+        this.highscore = highscore;
+
+    }
+    public void addScoreToTable(Highscore score){
+        table.add(score);
         Collections.sort(table);
     }
 
-    public int getHighscore() {
+    public double getHighscore() {
         return highscore;
+    }
+
+    public String getPlayerName() {
+        return playerName;
     }
 
     @Override
     public int compareTo(Highscore o) {
         Comparator<Highscore> comp = Comparator.comparing(Highscore::getHighscore);
-        return comp.compare(o, this);
+        return comp.compare(this, o);
     }
+
+    public void printTable(){
+        for (Highscore h : table
+             ) {
+            System.out.println(h.playerName+ " " + h.getHighscore());
+        }
+    }
+
+
 }
