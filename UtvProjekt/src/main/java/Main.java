@@ -24,7 +24,7 @@ public class Main {
 
                 case 1:
                     String isCorrect = game.playGame(input, lang);
-                    if (isCorrect.equals("Correct")) {
+                    if (isCorrect.equals("Corrext!")) {
                         Highscore highS = new Highscore(playerName, game.getUsersTime());
                         highscore.addScoreToTable(highS);
                     }
