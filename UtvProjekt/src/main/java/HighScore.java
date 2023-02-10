@@ -15,7 +15,6 @@ public class HighScore implements Comparable<HighScore> {
     }
 
     //Constructor with name on player and score/time
-
     public HighScore(String playerName, double time) {
         this.playerName = playerName;
         this.time = time;
@@ -27,6 +26,12 @@ public class HighScore implements Comparable<HighScore> {
         table.add(score);
         Collections.sort(table);
     }
+    // Method who is used to compare which time is the fastest time with built comparator
+    @Override
+    public int compareTo(HighScore o) {
+        Comparator<HighScore> comp = Comparator.comparing(HighScore::getTime);
+        return comp.compare(this, o);
+    }
 
     // Getters time and name
     public double getTime() {
@@ -37,12 +42,6 @@ public class HighScore implements Comparable<HighScore> {
         return playerName;
     }
 
-    // Method who is used to compare which time is the fastest time with built comparator
-    @Override
-    public int compareTo(HighScore o) {
-        Comparator<HighScore> comp = Comparator.comparing(HighScore::getTime);
-        return comp.compare(this, o);
-    }
 
     // Method used to print high score table
     public void printTable() {
@@ -56,7 +55,7 @@ public class HighScore implements Comparable<HighScore> {
         System.out.println("|                                                |");
         System.out.println("|------------------------------------------------|");
     }
-
+    // Metod to get numeber of scores and check that is not over 30 scores
     public int getNumberOfScores() throws ToManyScoresException {
         if (table.size() > 30) {
             throw new ToManyScoresException();
