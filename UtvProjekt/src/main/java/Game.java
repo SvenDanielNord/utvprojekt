@@ -11,15 +11,16 @@ public class Game {
         long startTime = System.currentTimeMillis();
         input.nextLine();
         String answer = input.nextLine();
+        String ignCase = answer.toLowerCase();
         long stopTime = System.currentTimeMillis();
-        usersTime = (stopTime - startTime) / 1000;
+        usersTime = (stopTime - startTime) / 1000.0;
 
-        if (answer.equals(alphabet)) {
-            System.out.println("Answer is right. Your time is: " + usersTime);
+        if (ignCase.equals(alphabet)) {
+            System.out.printf("Answer is right. Your time is: %.3fsec", usersTime);
             return "Corrext!";
         }
         else {
-            System.out.println("Answer  isn't right. Your answer is: " + answer + " and your time is: " + usersTime + " s.");
+            System.out.printf("Answer isn't right. Your answer is: %s and your time is: %.3fsec", ignCase, usersTime);
             return "Incorrect";
         }
     }
