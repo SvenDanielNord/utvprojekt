@@ -1,8 +1,4 @@
 import org.junit.jupiter.api.Test;
-
-import java.io.InputStream;
-import java.util.Scanner;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
@@ -18,6 +14,4 @@ class GameTest {
     void usersTimeIsCorrect() {
         assertEquals(0.0, game.getUsersTime());
     }
-
-
 }
