@@ -25,10 +25,10 @@ public class Game {
     }
         public void getAlphabet(int lang) {
             if(lang == 1) {
-                alphabet = "abcdefghijklmnopqrstuvwzyåäö";
+                alphabet = "abcdefghijklmnopqrstuvwxyzåäö";
             }
             else {
-                alphabet = "abcdefghijkmnopqrstuvwxyz";
+                alphabet = "abcdefghijklmnopqrstuvwxyz";
             }
         }
     public double getUsersTime() {
