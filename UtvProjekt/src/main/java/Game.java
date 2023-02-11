@@ -35,4 +35,8 @@ public class Game {
     public double getUsersTime() {
         return usersTime;
     }
+
+    public String getAlphabet() {
+        return alphabet;
+    }
 }
