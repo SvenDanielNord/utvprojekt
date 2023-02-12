@@ -48,12 +48,17 @@ public class HighScore implements Comparable<HighScore> {
         System.out.println("|------------------------------------------------|");
         System.out.println("|                                                |");
         System.out.println("                   High Score!");
+
         for (HighScore h : table
         ) {
-            System.out.println("               Name: " + h.getPlayerName() + "   Time: " + h.getTime() + "sec");
+
+            System.out.printf("               %s   %.3f sec\n", h.getPlayerName(), h.getTime());
+
         }
         System.out.println("|                                                |");
         System.out.println("|------------------------------------------------|");
+
+        System.out.println("\nPress enter to continue");
     }
     // Metod to get numeber of scores and check that is not over 30 scores
     public int getNumberOfScores() throws ToManyScoresException {
