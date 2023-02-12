@@ -18,9 +18,11 @@ public class Main {
 
         System.out.println();
         do {
+
             System.out.println("\n");
             System.out.println("          MENU");
             System.out.println("       1. Play\n       2. High score\n       0. Exit");
+
             switch (choice = input.nextInt()) {
 
                 case 1:
@@ -29,11 +31,15 @@ public class Main {
                         HighScore highS = new HighScore(playerName, game.getUsersTime());
                         highScore.addScoreToTable(highS);
                     }
+                    input.nextLine();
+
                     //play game
                     break;
                 case 2:
                     // see highScore
                     highScore.printTable();
+                    input.nextLine();
+                    input.nextLine();
                     break;
 
                 default:
