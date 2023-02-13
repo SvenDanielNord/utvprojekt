@@ -16,8 +16,10 @@ Instruktioner:
 
 3. Skriv in: git clone https://github.com/SvenDanielNord/utvprojekt.git och tryck enter.
 
-4. Sedan skriv: mvn clean package och tryck enter.
+4. Skriv: cd utvprojekt/ och tryck enter.
 
-5. Nu skriver du: java -jar .\target\UtvProjekt-1.0-SNAPSHOT.jar och tryck enter.
+5. Sedan skriv: mvn clean package och tryck enter.
 
-6. Nu är spelet igång!
+6. Nu skriver du: java -jar .\target\UtvProjekt-1.0-SNAPSHOT.jar och tryck enter.
+
+7. Nu är spelet igång!
