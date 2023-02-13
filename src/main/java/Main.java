@@ -5,15 +5,14 @@ public class Main {
         HighScore highScore = new HighScore();
         Game game = new Game();
         Scanner input = new Scanner(System.in);
-        String playerName;
-        int lang;
-        int choice = 123;
+        Player player = new Player();
+
 
         // create player
         System.out.println("Write your name:");
-        playerName = input.nextLine();
+        Player.name = input.nextLine();
         System.out.println("Select language 1 for Swedish 2 English");
-        lang = input.nextInt();
+        Player.lang = input.nextInt();
         // Game menu
 
         System.out.println();
@@ -23,12 +22,12 @@ public class Main {
             System.out.println("          MENU");
             System.out.println("       1. Play\n       2. High score\n       0. Exit");
 
-            switch (choice = input.nextInt()) {
+            switch (Player.choice = input.nextInt()) {
 
                 case 1:
-                    String isCorrect = game.playGame(input, lang);
+                    String isCorrect = game.playGame(input, Player.lang);
                     if (isCorrect.equals("Corrext!")) {
-                        HighScore highS = new HighScore(playerName, game.getUsersTime());
+                        HighScore highS = new HighScore(Player.name.toString(), game.getUsersTime());
                         highScore.addScoreToTable(highS);
                     }
                     input.nextLine();
@@ -48,7 +47,7 @@ public class Main {
 
 
             }
-        } while (choice != 0);
+        } while (Player.choice != 0);
         System.out.println("Thank you for playing!");
 
     }
